@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Dojo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section id="js-auth">
+        <div id="js-signup-view">
+            <h2>Sign Up</h2>
+            <form id="js-signup-form">
+                <input type="text" id="js-signup-name" placeholder="Full Name" required>
+                <input type="email" id="js-signup-email" placeholder="Email" required>
+                <input type="password" id="js-signup-password" placeholder="Password" required>
+                <button type="submit">Create Account</button>  
+            </form>
+            <p>Already have an account? <button id="js-show-login">Log in</button> </p>
+        </div>
+        <div id="js-login-view" style="display:none;">
+            <h2>Log In</h2>
+            <form id="js-login-form">
+                <input type="email" id="js-login-email" placeholder="Email" required>
+                <input type="passoword" id="js-login-password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <p>New here?<button id="js-show-signup">Sign Up </button></p>
+        </div>
+      </section>
+    
+      <section id="js-dashboard" style="display: none;">
+      <h2>Welcome, <span id="js-student-name"></span></h2>
+      <button id="js-logout">Log Out</button>
+
+      <h3>Your Progress</h3>
+      <div id="js-progress-bar-track">
+        <div id="js-progress-bar-fill"></div>
+      </div>
+ <ul id="js-class-list"></ul>
+    </section>
+    <script src="script.js"></script>     
+</body>
+</html>

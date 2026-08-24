@@ -1,0 +1,49 @@
+body{
+    font-family: sans-serif;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+#js-auth, #js-dashboard{
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 24px;
+    width: 320px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: gray;
+    color: white;
+    cursor: pointer;
+}
+
+#js-progress-bar-track{
+    background: #eee;
+    border-radius: 6px;
+    height: 14px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+#js-progress-bar-fill{
+    background: gray;
+    height: 100%;
+    width:0%;
+}
