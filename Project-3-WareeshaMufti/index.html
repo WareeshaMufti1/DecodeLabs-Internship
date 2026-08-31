@@ -4,42 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legacy Dojo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <div id="js-hero-bg"></div>
+
+    <h1 id="js-heading">LEGACY DOJO</h1>
+
     <section id="js-auth">
         <div id="js-signup-view">
-            <h2>Sign Up</h2>
+            <h2>Create your account</h2>
             <form id="js-signup-form">
                 <input type="text" id="js-signup-name" placeholder="Full Name" required>
                 <input type="email" id="js-signup-email" placeholder="Email" required>
                 <input type="password" id="js-signup-password" placeholder="Password" required>
-                <button type="submit">Create Account</button>  
+                <button type="submit">Create Account</button>
             </form>
-            <p>Already have an account? <button id="js-show-login">Log in</button> </p>
+            <p>Already have an account? <button id="js-show-login">Log in</button></p>
         </div>
         <div id="js-login-view" style="display:none;">
-            <h2>Log In</h2>
+            <h2>Welcome back</h2>
             <form id="js-login-form">
                 <input type="email" id="js-login-email" placeholder="Email" required>
-                <input type="passoword" id="js-login-password" placeholder="Password" required>
+                <input type="password" id="js-login-password" placeholder="Password" required>
                 <button type="submit">Log In</button>
             </form>
-            <p>New here?<button id="js-show-signup">Sign Up </button></p>
+            <p>New here? <button id="js-show-signup">Sign Up</button></p>
         </div>
-      </section>
-    
-      <section id="js-dashboard" style="display: none;">
-      <h2>Welcome, <span id="js-student-name"></span></h2>
-      <button id="js-logout">Log Out</button>
-
-      <h3>Your Progress</h3>
-      <div id="js-progress-bar-track">
-        <div id="js-progress-bar-fill"></div>
-      </div>
- <ul id="js-class-list"></ul>
     </section>
-    <script src="script.js"></script>     
+
+    <section id="js-dashboard" style="display: none;">
+        <h2>Welcome, <span id="js-student-name"></span></h2>
+        <button id="js-logout">Log Out</button>
+
+        <h3>Your Progress</h3>
+        <div id="js-progress-bar-track">
+            <div id="js-progress-bar-fill"></div>
+        </div>
+        <ul id="js-class-list"></ul>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>

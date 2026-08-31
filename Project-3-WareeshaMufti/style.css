@@ -1,49 +1,196 @@
-body{
-    font-family: sans-serif;
-    background-color: gray;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
+:root {
+  --ink: #17191c;
+  --paper: #ffffff;
+  --belt-red: #a6321f;
+  --belt-red-hover: #8a2a1a;
+  --gold: #b98b2b;
+  --text-dark: #22201c;
+  --text-muted: #6f6a5f;
+  --border: #e2ddce;
 }
 
-#js-auth, #js-dashboard{
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 24px;
-    width: 320px;
+* {
+  box-sizing: border-box;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-input{
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow-x: hidden;
 }
 
-button{
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    background: gray;
-    color: white;
-    cursor: pointer;
+/* Background photo, fixed behind everything and dimmed so the
+   form on top stays easy to read */
+#js-hero-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("https://tse2.mm.bing.net/th/id/OIP.HeETY5aBruJFYsEhLmIrTwHaFj?r=0&w=1024&h=768&rs=1&pid=ImgDetMain&o=7&rm=3");
+  background-size: cover;
+  background-position: center;
 }
 
-#js-progress-bar-track{
-    background: #eee;
-    border-radius: 6px;
-    height: 14px;
-    overflow: hidden;
-    margin: 10px 0;
+#js-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* lightens the photo so it reads as background, not the focus */
+  background: rgba(23, 25, 28, 0.55);
 }
-#js-progress-bar-fill{
-    background: gray;
-    height: 100%;
-    width:0%;
+
+/* Heading sits directly on the dimmed photo */
+#js-heading {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 2.75rem;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  margin: 0 0 28px 0;
+  text-align: center;
+}
+
+/* The card stays solid and opaque so it's clearly the
+   prominent, focused element on the page */
+#js-auth, #js-dashboard {
+  background: var(--paper);
+  border-top: 4px solid var(--belt-red);
+  border-radius: 8px;
+  padding: 32px 28px;
+  width: 320px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+#js-signup-view h2,
+#js-login-view h2,
+#js-dashboard h2 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0 0 20px 0;
+  color: var(--text-dark);
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #f7f5ee;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--belt-red);
+  background: var(--paper);
+}
+
+button {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: var(--belt-red);
+  color: white;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: var(--belt-red-hover);
+}
+
+/* Text-link style buttons */
+#js-show-login,
+#js-show-signup,
+#js-logout {
+  background: none;
+  color: var(--belt-red);
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#js-show-login:hover,
+#js-show-signup:hover {
+  background: none;
+  color: var(--belt-red-hover);
+}
+
+#js-logout {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 6px 12px;
+  color: var(--text-dark);
+}
+
+#js-signup-view p,
+#js-login-view p {
+  margin: 16px 0 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Dashboard */
+#js-dashboard h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  margin: 20px 0 8px 0;
+  color: var(--text-dark);
+}
+
+#js-progress-bar-track {
+  background: #eee9dc;
+  border-radius: 6px;
+  height: 14px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+#js-progress-bar-fill {
+  background: var(--gold);
+  height: 100%;
+  width: 0%;
+}
+
+#js-class-list {
+  list-style: none;
+  margin: 12px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#js-class-list li {
+  font-size: 0.9rem;
+  background: #f7f5ee;
+  border-left: 3px solid var(--belt-red);
+  border-radius: 4px;
+  padding: 8px 10px;
 }
